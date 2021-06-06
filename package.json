@@ -1,0 +1,27 @@
+{
+  "name": "HTML_GENERATOR-TEAM_PROFILES",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "watch": "nodemon index.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twistedmouse/HTML_GENERATOR-TEAM_PROFILES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twistedmouse/HTML_GENERATOR-TEAM_PROFILES/issues"
+  },
+  "homepage": "https://github.com/Twistedmouse/HTML_GENERATOR-TEAM_PROFILES#readme",
+  "dependencies": {
+    "inquirer": "^8.1.0",
+    "jest": "^27.0.4",
+    "nodemon": "^2.0.7"
+  }
+}
