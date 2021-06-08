@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-//NOTE: WILL REQUIRE HTML TEMPLATE DIRECTORY
+const generateHtml = require("generateHtml");
 //NOTE: will require class paths
 
 console.log("=======.~START TEAM HTML GENERATOR~.======= \n");
@@ -73,10 +73,19 @@ function employeeQuestions() {
         return console.log(
           "\n ==========!!!!!!!GENERATING TEAM!!!!!!!!!=========="
         );
-        //replace the GENERATING team console.log with genhtml function
+        writeHtml(answers);
+        //invoke writeHtml
       }
       employeeQuestions();
     });
+}
+
+function writeHtml(answers) {
+  fs.writeFile("./dist/index.html", generateHtml(answers), function (err) {
+    if (err) throw err;
+    console.log(`Writing index.html...`);
+    console.log(`\n ...index.html created.`);
+  });
 }
 
 function init() {
