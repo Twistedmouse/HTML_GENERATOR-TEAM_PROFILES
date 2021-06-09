@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateHtml = require("generateHtml");
+let employeesArray = [];
+// const generateHtml = require("generateHtml");
 //NOTE: will require class paths
 
 console.log("=======.~START TEAM HTML GENERATOR~.======= \n");
@@ -67,30 +68,38 @@ function employeeQuestions() {
       },
     ])
     .then((answers) => {
-      answers.buildTeam === "Add Engineer" ||
-        answers.buildTeam === "Add Intern";
       if (answers.buildTeam === "Finish building team.") {
         return console.log(
           "\n ==========!!!!!!!GENERATING TEAM!!!!!!!!!=========="
         );
-        writeHtml(answers);
+        // writeHtml(answers);
         //invoke writeHtml
       }
+      //change to if statments for intern/ enginneer for storing answers
+      answers.buildTeam === "Add Engineer" ||
+        answers.buildTeam === "Add Intern";
+
       employeeQuestions();
     });
 }
 
-function writeHtml(answers) {
-  fs.writeFile("./dist/index.html", generateHtml(answers), function (err) {
-    if (err) throw err;
-    console.log(`Writing index.html...`);
-    console.log(`\n ...index.html created.`);
-  });
-}
+// function writeHtml(answers) {
+//   fs.writeFile("./dist/index.html", generateHtml(answers), function (err) {
+//     if (err) throw err;
+//     console.log(`Writing index.html... \n ...index.html created.`);
+//   });
+// }
 
 function init() {
   inquirer.prompt(managerQuestions).then((answers) => {
     console.log("\n");
+    const manager = new Manager(
+      answers.managerName,
+      answers.managerId,
+      answers.managerEmail,
+      answers.officeNumber
+    );
+    employeesArray.push(manager);
     // console.log(answers);
     employeeQuestions();
   });
