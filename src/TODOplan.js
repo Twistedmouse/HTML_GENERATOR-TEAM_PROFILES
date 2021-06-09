@@ -4,8 +4,10 @@
 //      task: create function for writing the html file
 //WHEN: employee email is clicked
 //THEN: default email program opens and populates email section
+//      task: click event that links the email to default email program
 //WHEN: GITHUB link is clicked
 //THEN: employee github page opens on new tab
+//      task: github new tab href on generated html page 
 
 //todo: create manger, intern, employee and engineer classes
 //NOTE: employees should be the parent class that manager,intern and engineer build from

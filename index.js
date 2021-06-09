@@ -100,6 +100,9 @@ function init() {
       answers.officeNumber
     );
     employeesArray.push(manager);
+    const enginneer = new Enginneer(
+      answers.
+    )
     // console.log(answers);
     employeeQuestions();
   });
