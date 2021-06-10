@@ -1,5 +1,5 @@
 //TODO: generate a webpage with teams basic info, include name, department, role, email and github.
-//WHEN: promoted for team members information    
+//WHEN: promoted for team members information
 //THEN: html file is generated with cards displayed in a nice format
 //      task: create function for writing the html file
 //WHEN: employee email is clicked
@@ -7,11 +7,11 @@
 //      task: click event that links the email to default email program
 //WHEN: GITHUB link is clicked
 //THEN: employee github page opens on new tab
-//      task: github new tab href on generated html page 
+//      task: github new tab href on generated html page
 
-//todo: create manger, intern, employee and engineer classes
+//todo: :DONE: create manger, intern, employee and engineer classes
 //NOTE: employees should be the parent class that manager,intern and engineer build from
-//NOTE: employee properties:
+//NOTE: :DONE: employee properties:
 //name
 // id
 // email
@@ -19,14 +19,14 @@
 // getId()
 // getEmail()
 // getRole()—returns 'Employee'
-//NOTE: manager properties:
+//NOTE: :DONE:manager properties:
 // officeNumber
 // getRole()—overridden to return 'Manager'
-//NOTE: engineer properties:
+//NOTE: :DONE:engineer properties:
 // github—GitHub username
 // getGithub()
 // getRole()—overridden to return 'Engineer'
-//NOTE: intern properties:
+//NOTE: :DONE:intern properties:
 // school
 // getSchool()
 // getRole()—overridden to return 'Intern'
@@ -44,5 +44,5 @@
 //WHEN: finish building team
 //THEN: exit the app and generate html.
 
-//TODO: make/ run tests
+//TODO: :DONE: make/ run tests
 //BONUS create validation to ensure that user input is in the proper format.

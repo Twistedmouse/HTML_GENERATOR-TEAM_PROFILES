@@ -1,6 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 let employeesArray = [];
+const Manager = require("./lib/managerClass");
+const Engineer = require("./lib/engineerClass");
+const Intern = require("./lib/internClass");
+
 // const generateHtml = require("generateHtml");
 //NOTE: will require class paths
 
@@ -43,6 +47,14 @@ function employeeQuestions() {
           answers.buildTeam === "Add Engineer" ||
           answers.buildTeam === "Add Intern",
         type: "input",
+        name: "employeeName",
+        message: "Please enter employee name.",
+      },
+      {
+        when: (answers) =>
+          answers.buildTeam === "Add Engineer" ||
+          answers.buildTeam === "Add Intern",
+        type: "input",
         name: "employeeId",
         message: "Please enter employee Id.",
       },
@@ -75,10 +87,27 @@ function employeeQuestions() {
         // writeHtml(answers);
         //invoke writeHtml
       }
-      //change to if statments for intern/ enginneer for storing answers
-      answers.buildTeam === "Add Engineer" ||
-        answers.buildTeam === "Add Intern";
+      //if statements for intern/ engineer for storing answers
+      if (answers.buildTeam === "Add Engineer") {
+        const engineer = new Engineer(
+          answers.employeeName,
+          answers.employeeId,
+          answers.employeeEmail,
+          answers.employeeGithub
+        );
+        employeesArray.push(engineer);
+      }
+      if (answers.buildTeam === "Add Intern") {
+        const intern = new Intern(
+          answers.employeeName,
+          answers.employeeId,
+          answers.employeeEmail,
+          answers.internSchool
+        );
+        employeesArray.push(intern);
+      }
 
+      console.log(employeesArray);
       employeeQuestions();
     });
 }
@@ -100,10 +129,8 @@ function init() {
       answers.officeNumber
     );
     employeesArray.push(manager);
-    const enginneer = new Enginneer(
-      answers.
-    )
-    // console.log(answers);
+
+    console.log(manager);
     employeeQuestions();
   });
 }
