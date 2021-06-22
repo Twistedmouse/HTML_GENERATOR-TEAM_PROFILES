@@ -3,7 +3,11 @@ html {
 }
 
 body {
-  background: rgb(98, 93, 100);
+  background: linear-gradient(
+    180deg,
+    rgb(171, 250, 246) 45%,
+    rgb(98, 93, 100) 100%
+  );
 }
 
 .jumbotron {
@@ -13,7 +17,7 @@ body {
     aqua 30%,
     yellow 50%,
     lime 60%,
-    green 70%,
+    rgb(24, 169, 212) 70%,
     gray 90%,
     gray 100%
   );
@@ -26,6 +30,7 @@ body {
   background-size: 10000px;
   overflow: hidden;
   margin-bottom: 60px;
+  box-shadow: rgb(70, 64, 77) 5px 15px 70px 5px;
 }
 
 h1 {
