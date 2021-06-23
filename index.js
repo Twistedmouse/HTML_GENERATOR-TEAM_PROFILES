@@ -13,7 +13,7 @@ console.log("=======.~START TEAM HTML GENERATOR~.======= \n");
 const managerQuestions = [
   {
     type: "input",
-    name: "managerName",
+    name: "name",
     message: "Pease enter the team manager's name.",
   },
   {
@@ -47,7 +47,7 @@ function employeeQuestions() {
           answers.buildTeam === "Add Engineer" ||
           answers.buildTeam === "Add Intern",
         type: "input",
-        name: "employeeName",
+        name: "name",
         message: "Please enter employee name.",
       },
       {
@@ -90,7 +90,7 @@ function employeeQuestions() {
       //if statements for intern/ engineer for storing answers
       if (answers.buildTeam === "Add Engineer") {
         const engineer = new Engineer(
-          answers.employeeName,
+          answers.name,
           answers.employeeId,
           answers.employeeEmail,
           answers.employeeGithub
@@ -99,7 +99,7 @@ function employeeQuestions() {
       }
       if (answers.buildTeam === "Add Intern") {
         const intern = new Intern(
-          answers.employeeName,
+          answers.name,
           answers.employeeId,
           answers.employeeEmail,
           answers.internSchool
@@ -123,7 +123,7 @@ function init() {
   inquirer.prompt(managerQuestions).then((answers) => {
     console.log("\n");
     const manager = new Manager(
-      answers.managerName,
+      answers.name,
       answers.managerId,
       answers.managerEmail,
       answers.officeNumber
