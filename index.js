@@ -18,12 +18,12 @@ const managerQuestions = [
   },
   {
     type: "input",
-    name: "managerId",
+    name: "id",
     message: "Please enter your team manager's Id.",
   },
   {
     type: "input",
-    name: "managerEmail",
+    name: "email",
     message: "Please enter your team manager's email address.",
   },
   {
@@ -55,7 +55,7 @@ function employeeQuestions() {
           answers.buildTeam === "Add Engineer" ||
           answers.buildTeam === "Add Intern",
         type: "input",
-        name: "employeeId",
+        name: "id",
         message: "Please enter employee Id.",
       },
       {
@@ -63,7 +63,7 @@ function employeeQuestions() {
           answers.buildTeam === "Add Engineer" ||
           answers.buildTeam === "Add Intern",
         type: "input",
-        name: "employeeEmail",
+        name: "email",
         message: "Please enter employee email.",
       },
       {
@@ -91,8 +91,8 @@ function employeeQuestions() {
       if (answers.buildTeam === "Add Engineer") {
         const engineer = new Engineer(
           answers.name,
-          answers.employeeId,
-          answers.employeeEmail,
+          answers.id,
+          answers.email,
           answers.employeeGithub
         );
         employeesArray.push(engineer);
@@ -100,8 +100,8 @@ function employeeQuestions() {
       if (answers.buildTeam === "Add Intern") {
         const intern = new Intern(
           answers.name,
-          answers.employeeId,
-          answers.employeeEmail,
+          answers.id,
+          answers.email,
           answers.internSchool
         );
         employeesArray.push(intern);
@@ -124,8 +124,8 @@ function init() {
     console.log("\n");
     const manager = new Manager(
       answers.name,
-      answers.managerId,
-      answers.managerEmail,
+      answers.id,
+      answers.email,
       answers.officeNumber
     );
     employeesArray.push(manager);
