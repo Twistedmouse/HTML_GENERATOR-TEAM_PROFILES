@@ -10,6 +10,11 @@ body {
   );
 }
 
+p {
+  margin-left: 7px;
+  font-size: 22px;
+}
+
 .jumbotron {
   background: linear-gradient(
     45deg,

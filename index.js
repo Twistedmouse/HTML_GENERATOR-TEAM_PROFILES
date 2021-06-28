@@ -5,11 +5,11 @@ const Manager = require("./lib/managerClass");
 const Engineer = require("./lib/engineerClass");
 const Intern = require("./lib/internClass");
 
-// const generateHtml = require("generateHtml");
-//NOTE: will require class paths
+// const generateHtml = require("./lib/generateHtml");
 
 console.log("=======.~START TEAM HTML GENERATOR~.======= \n");
 
+//array of questions for manager
 const managerQuestions = [
   {
     type: "input",
@@ -33,6 +33,7 @@ const managerQuestions = [
   },
 ];
 
+//array of questions for other employees
 function employeeQuestions() {
   inquirer
     .prompt([
@@ -79,14 +80,18 @@ function employeeQuestions() {
         message: "Please enter interns school.",
       },
     ])
-    .then((answers) => {
+
+    //function for when finishing employee input
+    .then(function (answers) {
       if (answers.buildTeam === "Finish building team.") {
         return console.log(
           "\n ==========!!!!!!!GENERATING TEAM!!!!!!!!!=========="
         );
-        // writeHtml(answers);
         //invoke writeHtml
+        // writeHtml(answers);
+        // generateHtml(teamMember);
       }
+
       //if statements for intern/ engineer for storing answers
       if (answers.buildTeam === "Add Engineer") {
         const engineer = new Engineer(
@@ -119,6 +124,7 @@ function employeeQuestions() {
 //   });
 // }
 
+// initiate and stores answers for manager then invokes employeeQuestions()
 function init() {
   inquirer.prompt(managerQuestions).then((answers) => {
     console.log("\n");
