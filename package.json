@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Twistedmouse/HTML_GENERATOR-TEAM_PROFILES#readme",
   "dependencies": {
     "inquirer": "^8.1.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.2"
   },
   "devDependencies": {
     "jest": "^27.0.4"

@@ -1,4 +1,4 @@
-//TODO: generate a webpage with teams basic info, include name, department, role, email and github.
+//TODO: :DONE: generate a webpage with teams basic info, include name, department, role, email and github.
 //WHEN: promoted for team members information
 //THEN: html file is generated with cards displayed in a nice format
 //      task: create function for writing the html file

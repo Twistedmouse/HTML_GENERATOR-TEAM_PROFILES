@@ -5,7 +5,7 @@ const Manager = require("./lib/managerClass");
 const Engineer = require("./lib/engineerClass");
 const Intern = require("./lib/internClass");
 
-// const generateHtml = require("./lib/generateHtml");
+const generateHtml = require("./lib/generateHtml.js");
 
 console.log("=======.~START TEAM HTML GENERATOR~.======= \n");
 
@@ -84,14 +84,11 @@ function employeeQuestions() {
     //function for when finishing employee input
     .then(function (answers) {
       if (answers.buildTeam === "Finish building team.") {
-        return console.log(
-          "\n ==========!!!!!!!GENERATING TEAM!!!!!!!!!=========="
-        );
+        console.log("\n ==========!!!!!!!GENERATING TEAM!!!!!!!!!==========");
         //invoke writeHtml
-        // writeHtml(answers);
-        // generateHtml(teamMember);
+        generateHtml(employeesArray);
+        return;
       }
-
       //if statements for intern/ engineer for storing answers
       if (answers.buildTeam === "Add Engineer") {
         const engineer = new Engineer(
