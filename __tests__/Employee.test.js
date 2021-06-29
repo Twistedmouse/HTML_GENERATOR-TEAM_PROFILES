@@ -8,8 +8,8 @@ describe(`Employee`, () => {
 
   it("Throws error with no name", () => {
     expect(() => {
-      const employee = new Employee("");
-    }).toThrow("");
+      const employee = new Employee();
+    }).toThrow();
   });
 });
 
